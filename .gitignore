@@ -1,0 +1,12 @@
+/vendor/
+/web/core/
+/web/modules/contrib/
+/web/themes/contrib/
+/web/libraries/
+ 
+/web/sites/default/files/
+/web/sites/default/settings.local.php
+/web/themes/custom/*/node_modules
+ 
+.ddev/db_snapshots/
+ 
