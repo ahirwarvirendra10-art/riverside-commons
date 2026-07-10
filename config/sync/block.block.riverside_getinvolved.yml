@@ -1,0 +1,25 @@
+uuid: 7b86881c-efe2-462a-820c-13ec0f7c5bed
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.get-involved
+  module:
+    - system
+  theme:
+    - riverside
+id: riverside_getinvolved
+theme: riverside
+region: footer_column_4
+weight: -9
+provider: null
+plugin: 'system_menu_block:get-involved'
+settings:
+  id: 'system_menu_block:get-involved'
+  label: 'Get Involved'
+  label_display: visible
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

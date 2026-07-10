@@ -1,0 +1,25 @@
+uuid: 9a71b4a6-32c2-4cb1-b381-0487034ee4e1
+langcode: en
+status: false
+dependencies:
+  config:
+    - system.menu.footer
+  module:
+    - system
+  theme:
+    - riverside
+id: riverside_footer
+theme: riverside
+region: footer
+weight: -9
+provider: null
+plugin: 'system_menu_block:footer'
+settings:
+  id: 'system_menu_block:footer'
+  label: Footer
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

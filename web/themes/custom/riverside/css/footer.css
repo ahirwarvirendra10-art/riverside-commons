@@ -1,0 +1,87 @@
+.site-footer {
+    background: #1B1B1B;
+    padding: 48px;
+    gap: 32px;
+}
+
+.footer-columns {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    padding: 60px 0;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.footer-column .block {
+    margin: 0;
+}
+
+.footer-column nav h2 {
+    font-family: Inter;
+    font-weight: 600;
+    font-style: Semi Bold;
+    font-size: 15px;
+    line-height: 148%;
+    letter-spacing: 0%;
+    color: #FFFFFF;
+
+
+}
+
+.footer-column nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.footer-column nav li {
+    margin: 0 0 8px;
+}
+
+.copyright,
+.footer-column nav a {
+    font-family: Inter;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 14px;
+    line-height: 148%;
+    letter-spacing: 0%;
+    color: #B0B0AB
+}
+
+.footer-column nav a:hover,.copyright:hover {
+    color: #ffffff;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 0;
+}
+
+.footer-social nav ul {
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.footer-social nav li {
+    margin: 0;
+}
+
+.footer-social nav a {
+    font-family: Inter;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 13px;
+    line-height: 148%;
+    text-decoration: none;
+    color: #B0B0AB;
+}
+
+.footer-social nav a:hover {
+    color: #ffffff;
+}

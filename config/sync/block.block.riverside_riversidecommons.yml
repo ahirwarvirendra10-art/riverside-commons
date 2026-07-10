@@ -1,0 +1,25 @@
+uuid: 84c327b4-9d61-4ae3-80c8-c853cd4b06aa
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.footer-column-1
+  module:
+    - system
+  theme:
+    - riverside
+id: riverside_riversidecommons
+theme: riverside
+region: footer_column_1
+weight: -9
+provider: null
+plugin: 'system_menu_block:footer-column-1'
+settings:
+  id: 'system_menu_block:footer-column-1'
+  label: 'Riverside Commons'
+  label_display: visible
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

@@ -1,0 +1,21 @@
+uuid: cf0a9afc-22f5-497d-863b-4d6742d15619
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_end_date
+    - node.type.program
+  module:
+    - datetime
+id: node.program.field_end_date
+field_name: field_end_date
+entity_type: node
+bundle: program
+label: 'End Date'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

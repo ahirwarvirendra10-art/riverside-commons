@@ -1,0 +1,19 @@
+uuid: 6b81055b-c1b9-4cd6-9ca7-33ef8384e903
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_instructor_role
+    - node.type.program
+id: node.program.field_instructor_role
+field_name: field_instructor_role
+entity_type: node
+bundle: program
+label: 'Instructor Role'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

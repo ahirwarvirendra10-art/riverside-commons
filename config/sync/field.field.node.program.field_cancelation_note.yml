@@ -1,0 +1,19 @@
+uuid: e69833e5-73ea-4bb3-87d1-d756e49859c8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_cancelation_note
+    - node.type.program
+id: node.program.field_cancelation_note
+field_name: field_cancelation_note
+entity_type: node
+bundle: program
+label: 'Cancelation note'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

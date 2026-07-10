@@ -1,0 +1,23 @@
+uuid: 1c9eb1f0-89d5-4af0-8755-419044392a5f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_standard_price
+    - node.type.program
+id: node.program.field_standard_price
+field_name: field_standard_price
+entity_type: node
+bundle: program
+label: 'Standard Price'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

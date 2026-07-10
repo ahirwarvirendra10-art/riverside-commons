@@ -1,0 +1,23 @@
+uuid: f1a792e0-a317-4a58-88b7-f25285b6e12e
+langcode: en
+status: false
+dependencies:
+  module:
+    - search
+  theme:
+    - riverside
+_core:
+  default_config_hash: imMyHD6LYci0gtXq56qr9ZKGHzbEG9uFydrN5EhKtSU
+id: riverside_search_form_wide
+theme: riverside
+region: header
+weight: -6
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: 'Search form (wide)'
+  label_display: '0'
+  provider: search
+  page_id: ''
+visibility: {  }

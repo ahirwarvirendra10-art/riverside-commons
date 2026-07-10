@@ -1,0 +1,19 @@
+uuid: eb4ee119-deac-49ad-a261-15b7d82cf243
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_instructor_bio
+    - node.type.program
+id: node.program.field_instructor_bio
+field_name: field_instructor_bio
+entity_type: node
+bundle: program
+label: 'Instructor Bio'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

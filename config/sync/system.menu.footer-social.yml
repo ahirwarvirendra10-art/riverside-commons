@@ -1,0 +1,8 @@
+uuid: 24828fc1-9979-49db-a4eb-100f0b720a75
+langcode: en
+status: true
+dependencies: {  }
+id: footer-social
+label: 'Footer Social'
+description: ''
+locked: false

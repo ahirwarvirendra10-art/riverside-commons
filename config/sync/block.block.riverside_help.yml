@@ -1,0 +1,22 @@
+uuid: 4ad35d4c-c4d0-4191-b6d0-11088a60532e
+langcode: en
+status: false
+dependencies:
+  module:
+    - help
+  theme:
+    - riverside
+_core:
+  default_config_hash: VfPFqqxfkomud5CO8DUijw85QIl9GIxh_nIxLOYESxg
+id: riverside_help
+theme: riverside
+region: header
+weight: 1
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  label_display: '0'
+  provider: help
+visibility: {  }

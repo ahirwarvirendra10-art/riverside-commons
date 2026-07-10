@@ -1,0 +1,25 @@
+uuid: a940a37f-05b9-474a-8bd1-60c3cd329528
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.footer-social
+  module:
+    - system
+  theme:
+    - riverside
+id: riverside_footersocial
+theme: riverside
+region: footer
+weight: 0
+provider: null
+plugin: 'system_menu_block:footer-social'
+settings:
+  id: 'system_menu_block:footer-social'
+  label: 'Footer Social'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

@@ -1,0 +1,25 @@
+uuid: ea92b697-f44b-450e-b0ad-27a31c9f26ff
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.about
+  module:
+    - system
+  theme:
+    - riverside
+id: riverside_about
+theme: riverside
+region: footer_column_3
+weight: -9
+provider: null
+plugin: 'system_menu_block:about'
+settings:
+  id: 'system_menu_block:about'
+  label: About
+  label_display: visible
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

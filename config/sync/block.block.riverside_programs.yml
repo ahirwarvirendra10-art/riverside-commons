@@ -1,0 +1,25 @@
+uuid: 52dcc38c-6632-4f25-8efa-8145bb125b01
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.programs
+  module:
+    - system
+  theme:
+    - riverside
+id: riverside_programs
+theme: riverside
+region: footer_column_2
+weight: -9
+provider: null
+plugin: 'system_menu_block:programs'
+settings:
+  id: 'system_menu_block:programs'
+  label: Programs
+  label_display: visible
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

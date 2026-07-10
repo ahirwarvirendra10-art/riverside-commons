@@ -1,0 +1,165 @@
+.program-card {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: box-shadow .3s ease, transform .3s ease;
+    margin: 0 16px 32px 0;
+}
+
+.program-card:hover {
+    box-shadow: 0 18px 40px rgba(0, 0, 0, .08);
+    transform: translateY(-2px);
+}
+
+.program-card__image {
+    display: block;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    background: #f7f7f7;
+}
+
+.program-card__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .3s ease;
+}
+
+.program-card:hover .program-card__image img {
+    transform: scale(1.05);
+}
+
+.program-card__content {
+    padding: 24px;
+}
+
+.program-card__category{
+    display: inline-block;
+    margin-bottom: 14px;
+    padding: 6px 12px;
+    background: #F2E7E2;
+    color: #A85A42;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+}
+
+.program-card__title {
+    margin-bottom: 14px;
+    font-size: 17px;
+    line-height: 1.2;
+}
+
+.program-card__title a {
+    color: #111;
+    text-decoration: none;
+}
+
+.program-card__description {
+    margin-bottom: 18px;
+    color: #555;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.program-card__schedule {
+    margin-bottom: 20px;
+    color: #666;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.program-card__prices {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+}
+
+.program-card__price {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 14px;
+    min-width: 110px;
+}
+
+.program-card__price span {
+    color: #777;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.program-card__price strong,
+.program-card__price b,
+.program-card__price .price {
+    color: #111;
+}
+
+.program-card-grid {
+    display: grid;
+    gap: 32px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.program-card{
+background:#fff;
+border:1px solid #e5e5e5;
+border-radius:12px;
+overflow:hidden;
+height:100%;
+}
+
+.program-card-image img{
+width:100%;
+height:180px;
+object-fit:cover;
+display:block;
+}
+
+.program-card-content{
+padding:16px;
+}
+
+.program-card-category{
+display:inline-block;
+padding:4px 8px;
+background:#f8ece7;
+border-radius:4px;
+font-size:11px;
+font-weight:600;
+text-transform:uppercase;
+color:#b46b50;
+margin-bottom:12px;
+}
+
+.program-card-title{
+font-size:28px;
+font-weight:700;
+line-height:1.2;
+margin:0 0 12px;
+}
+
+.program-card-title a{
+color:#111;
+text-decoration:none;
+}
+
+.program-card-body{
+font-size:14px;
+line-height:1.6;
+color:#666;
+margin-bottom:16px;
+min-height:66px;
+}
+
+.program-card-meta{
+display:flex;
+align-items:center;
+gap:6px;
+font-size:13px;
+font-weight:600;
+color:#111;
+}

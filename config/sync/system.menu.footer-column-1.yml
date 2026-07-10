@@ -1,0 +1,8 @@
+uuid: 365b3ded-ad15-49c4-b3b6-8dd924b78f03
+langcode: en
+status: true
+dependencies: {  }
+id: footer-column-1
+label: 'Riverside Commons'
+description: ''
+locked: false
