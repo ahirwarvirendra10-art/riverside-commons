@@ -14,7 +14,6 @@
 
 .program-card__image {
     display: block;
-    aspect-ratio: 16 / 10;
     overflow: hidden;
     background: #f7f7f7;
 }
@@ -34,7 +33,7 @@
     padding: 24px;
 }
 
-.program-card__category{
+.program-card__category {
     display: inline-block;
     margin-bottom: 14px;
     padding: 6px 12px;
@@ -98,68 +97,59 @@
     color: #111;
 }
 
-.program-card-grid {
+.program-card-grid .views-view-grid {
     display: grid;
     gap: 32px;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
-.program-card{
-background:#fff;
-border:1px solid #e5e5e5;
-border-radius:12px;
-overflow:hidden;
-height:100%;
+ .program-header{
+    margin-top: 20px;
+ }
+ .program-header p{
+    color: #555;
+    padding: 10px 0;
+ }
+.views-exposed-form .form-radios {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+     margin: 20px 0px;
 }
 
-.program-card-image img{
-width:100%;
-height:180px;
-object-fit:cover;
-display:block;
+.views-exposed-form .form-radios .form-item {
+    margin: 0;
 }
 
-.program-card-content{
-padding:16px;
+.views-exposed-form .form-radios input[type="radio"] {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
 }
 
-.program-card-category{
-display:inline-block;
-padding:4px 8px;
-background:#f8ece7;
-border-radius:4px;
-font-size:11px;
-font-weight:600;
-text-transform:uppercase;
-color:#b46b50;
-margin-bottom:12px;
+.views-exposed-form .form-radios label {
+    display: inline-block;
+    padding: 8px 18px;
+    border: 1px solid #ddd;
+    border-radius: 999px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background .2s ease, color .2s ease, border-color .2s ease;
 }
 
-.program-card-title{
-font-size:28px;
-font-weight:700;
-line-height:1.2;
-margin:0 0 12px;
+.views-exposed-form .form-radios input[type="radio"]:checked + label {
+    background: #111;
+    color: #fff;
+    border-color: #111;
 }
 
-.program-card-title a{
-color:#111;
-text-decoration:none;
-}
-
-.program-card-body{
-font-size:14px;
-line-height:1.6;
-color:#666;
-margin-bottom:16px;
-min-height:66px;
-}
-
-.program-card-meta{
-display:flex;
-align-items:center;
-gap:6px;
-font-size:13px;
-font-weight:600;
-color:#111;
+.views-exposed-form .form-radios input[type="radio"]:focus-visible + label {
+    outline: 2px solid #111;
+    outline-offset: 2px;
 }

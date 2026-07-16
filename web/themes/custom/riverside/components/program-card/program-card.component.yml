@@ -1,0 +1,39 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/11.x/core/assets/schemas/v1/component.schema.json
+
+name: Program Card
+
+description: Reusable Program Card component for listing and related programs.
+
+status: stable
+
+props:
+  type: object
+
+  required:
+    - title
+    - url
+
+  properties:
+
+    title:
+      type: string
+      title: Program Title
+
+    url:
+      type: string
+      title: URL
+
+    image:
+      title: Hero Image
+
+    category:
+      type: string
+      title: Category
+
+    description:
+      type: string
+      title: Card Description
+
+    meta:
+      type: string
+      title: Meta Line

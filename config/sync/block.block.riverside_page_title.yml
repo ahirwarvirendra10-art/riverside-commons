@@ -9,7 +9,7 @@ _core:
 id: riverside_page_title
 theme: riverside
 region: header
-weight: -8
+weight: -11
 provider: null
 plugin: page_title_block
 settings:

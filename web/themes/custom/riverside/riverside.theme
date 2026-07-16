@@ -1,6 +1,157 @@
 <?php
 
+use Drupal\node\NodeInterface;
+// use Drupal\file\Entity\File;
+use Drupal\media\MediaInterface;
+use Drupal\file\FileInterface;
+
 /**
- * @file
- * Riverside Theme.
+ * Implements hook_preprocess_node().
  */
+function riverside_preprocess_node(array &$variables): void
+{
+
+    if (empty($variables['node']) || !$variables['node'] instanceof NodeInterface) {
+        return;
+    }
+
+    /** @var \Drupal\node\Entity\Node $node */
+    $node = $variables['node'];
+
+    if ($node->bundle() !== 'program') {
+        return;
+    }
+
+    /*
+   |--------------------------------------------------------------------------
+   | Program Card Data
+   |--------------------------------------------------------------------------
+   */
+
+    $program_card = [];
+
+    $program_card['title'] = $node->label();
+
+    $program_card['url'] = $node->toUrl()->toString();
+
+    /*
+   |--------------------------------------------------------------------------
+   | Hero Image
+   |--------------------------------------------------------------------------
+   */
+
+    $program_card['image'] = [];
+
+    if (!$node->get('field_hero_image')->isEmpty()) {
+
+        $view_builder = \Drupal::entityTypeManager()->getViewBuilder('media');
+
+        $media = $node->get('field_hero_image')->entity;
+
+        if ($media) {
+            $program_card['image'] = $view_builder->view($media, 'default');
+        }
+    }
+
+    /*
+   |--------------------------------------------------------------------------
+   | Category
+   |--------------------------------------------------------------------------
+   */
+
+    $program_card['category'] = '';
+
+    if (!$node->get('field_program_category')->isEmpty()) {
+
+        $term = $node
+            ->get('field_program_category')
+            ->entity;
+
+        if ($term) {
+            $program_card['category'] = $term->label();
+        }
+    }
+
+    /*
+   |--------------------------------------------------------------------------
+   | Card Description
+   |--------------------------------------------------------------------------
+   */
+
+    $program_card['description'] = '';
+
+    if (!$node->get('field_card_description')->isEmpty()) {
+
+        $program_card['description'] =
+            trim($node->get('field_card_description')->value);
+    }
+
+    /*
+   |--------------------------------------------------------------------------
+   | Meta Line
+   |--------------------------------------------------------------------------
+   */
+
+    $meta = [];
+
+    if (!$node->get('field_sessions')->isEmpty()) {
+        $meta[] = trim($node->get('field_sessions')->value).' weeks';
+    }
+
+    if (!$node->get('field_schedule')->isEmpty()) {
+        $meta[] = trim($node->get('field_schedule')->value);
+    }
+
+    if (!$node->get('field_standard_price')->isEmpty()) {
+        $meta[] = '$' . trim($node->get('field_standard_price')->value);
+    }
+
+    $program_card['meta'] = implode(' • ', $meta);
+
+    /*
+   |--------------------------------------------------------------------------
+   | Detail Sidebar
+   |--------------------------------------------------------------------------
+   */
+
+    $variables['price'] = '';
+
+    if (!$node->get('field_standard_price')->isEmpty()) {
+
+        $variables['price'] =
+            '$' . $node->get('field_standard_price')->value;
+    }
+
+    $variables['member_price'] = '';
+
+    if (!$node->get('field_member_price')->isEmpty()) {
+
+        $variables['member_price'] =
+            '$' . $node->get('field_member_price')->value;
+    }
+
+    /*
+   |--------------------------------------------------------------------------
+   | Date Range
+   |--------------------------------------------------------------------------
+   */
+
+    $variables['date_range'] = '';
+
+    if (
+        !$node->get('field_start_date')->isEmpty() &&
+        !$node->get('field_end_date')->isEmpty()
+    ) {
+
+        $start = strtotime($node->get('field_start_date')->value);
+
+        $end = strtotime($node->get('field_end_date')->value);
+
+        $variables['date_range'] =
+            date('M j', $start) .
+            ' – ' .
+            date('M j', $end);
+    }
+
+    $variables['program_card'] = $program_card;
+}

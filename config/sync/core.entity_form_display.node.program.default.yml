@@ -9,7 +9,6 @@ dependencies:
     - field.field.node.program.field_class_size
     - field.field.node.program.field_end_date
     - field.field.node.program.field_hero_image
-    - field.field.node.program.field_hero_images
     - field.field.node.program.field_instructor_bio
     - field.field.node.program.field_instructor_name
     - field.field.node.program.field_instructor_photo
@@ -24,11 +23,9 @@ dependencies:
     - field.field.node.program.field_standard_price
     - field.field.node.program.field_start_date
     - field.field.node.program.field_subtitle
-    - image.style.thumbnail
     - node.type.program
   module:
     - datetime
-    - image
     - media_library
     - path
     - text
@@ -82,13 +79,12 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_hero_images:
-    type: image_image
-    weight: 2
+  field_hero_image:
+    type: media_library_widget
+    weight: 1
     region: content
     settings:
-      progress_indicator: throbber
-      preview_image_style: thumbnail
+      media_types: {  }
     third_party_settings: {  }
   field_instructor_bio:
     type: string_textarea
@@ -192,7 +188,7 @@ content:
     third_party_settings: {  }
   field_subtitle:
     type: string_textfield
-    weight: 1
+    weight: 2
     region: content
     settings:
       size: 60
@@ -243,5 +239,4 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden:
-  field_hero_image: true
+hidden: {  }

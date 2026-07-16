@@ -1,6 +1,5 @@
 .site-footer {
     background: #1B1B1B;
-    padding: 48px;
     gap: 32px;
 }
 
@@ -19,6 +18,7 @@
 .footer-column nav h2 {
     font-family: Inter;
     font-weight: 600;
+    margin-bottom: 10px;
     font-style: Semi Bold;
     font-size: 15px;
     line-height: 148%;

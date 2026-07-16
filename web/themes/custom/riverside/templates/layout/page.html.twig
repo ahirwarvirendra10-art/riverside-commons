@@ -13,7 +13,9 @@
 					Riverside Commons
 				</a>
 			</div>
-
+			<button type="button" class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="main-navigation">
+				☰
+			</button>
 			<nav class="main-navigation">
 				{{ page.primary_menu }}
 			</nav>
@@ -27,6 +29,11 @@
 
 	<main class="site-main">
 		<div class="container">
+			{% if page.breadcrumb %}
+				<div class="breadcrumb-wrapper">
+					{{ page.breadcrumb }}
+				</div>
+			{% endif %}
 			{{ page.content }}
 		</div>
 	</main>

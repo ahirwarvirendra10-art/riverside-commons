@@ -11,7 +11,7 @@ _core:
 id: riverside_site_branding
 theme: riverside
 region: header
-weight: 4
+weight: -9
 provider: null
 plugin: system_branding_block
 settings:

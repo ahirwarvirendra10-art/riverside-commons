@@ -5,9 +5,17 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - node.type.program
+    - taxonomy.vocabulary.program_categories
+  content:
+    - 'taxonomy_term:program_categories:06ad7da8-ee84-4895-8fbd-038977a200da'
+    - 'taxonomy_term:program_categories:cf29cf3c-881d-406e-9b5d-77c007fe5d4c'
+    - 'taxonomy_term:program_categories:e2dcd2b4-ad69-4edc-bf91-17b7af053a04'
+    - 'taxonomy_term:program_categories:f3d97347-a412-4767-ba34-01c8d83d175b'
   module:
+    - better_exposed_filters
     - datetime
     - node
+    - taxonomy
     - user
 id: programs
 label: Programs
@@ -322,6 +330,56 @@ display:
             items_per_page_options_all_label: '- All -'
             offset: false
             offset_label: Offset
+      exposed_form:
+        type: bef
+        options:
+          submit_button: Apply
+          reset_button: false
+          reset_button_label: Reset
+          exposed_sorts_label: 'Sort by'
+          expose_sort_order: true
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+          text_input_required: 'Select any filter and click on Apply to see results'
+          text_input_required_format: basic_html
+          bef:
+            general:
+              autosubmit: true
+              auto_submit_sort_only: false
+              autosubmit_breakpoint: ''
+              autosubmit_exclude_textfield: true
+              autosubmit_textfield_delay: 500
+              autosubmit_textfield_minimum_length: 3
+              autosubmit_hide: true
+              input_required: false
+              allow_secondary: false
+              secondary_label: 'Advanced options'
+              secondary_open: false
+              reset_button_always_show: false
+            filter:
+              field_program_category_target_id:
+                plugin_id: bef
+                advanced:
+                  sort_options: false
+                  sort_options_method: alphabetical_asc
+                  sort_options_natural: true
+                  rewrite:
+                    filter_rewrite_values: 'All|All Programs'
+                    filter_rewrite_values_key: true
+                  collapsible: false
+                  collapsible_disable_automatic_open: false
+                  open_by_default: false
+                  is_secondary: false
+                  hide_label: false
+                  field_classes: ''
+                select_all_none: false
+                select_all_none_nested: false
+                display_inline: true
+                soft_limit: 0
+                soft_limit_label_less: 'Show less'
+                soft_limit_label_more: 'Show more'
+                scrollable: false
+                scrollable_height: 300
       sorts:
         created:
           id: created
@@ -360,21 +418,73 @@ display:
           plugin_id: bundle
           value:
             program: program
+        field_program_category_target_id:
+          id: field_program_category_target_id
+          table: node__field_program_category
+          field: field_program_category_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: taxonomy_index_tid
+          operator: and
+          value:
+            3: 3
+            2: 2
+            1: 1
+            4: 4
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_program_category_target_id_op
+            label: ''
+            description: ''
+            use_operator: false
+            operator: field_program_category_target_id_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_program_category_target_id
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              administrator: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: 'Program Category (field_program_category)'
+            description: null
+            identifier: field_program_category_target_id
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items:
+              1: {  }
+              2: {  }
+              3: {  }
+          reduce_duplicates: false
+          vid: program_categories
+          type: select
+          hierarchy: false
+          limit: true
+          error_message: true
       filter_groups:
         operator: AND
         groups:
           1: AND
       style:
-        type: grid
+        type: grid_responsive
         options:
           uses_fields: false
           columns: 3
-          automatic_width: true
+          cell_min_width: 250
+          grid_gutter: 10
           alignment: horizontal
-          row_class_custom: ''
-          row_class_default: true
-          col_class_custom: ''
-          col_class_default: true
       row:
         type: 'entity:node'
         options:
@@ -382,12 +492,28 @@ display:
       defaults:
         css_class: false
         pager: false
+        exposed_form: false
         style: false
         row: false
         sorts: false
         filters: false
         filter_groups: false
-      css_class: ''
+        header: false
+      css_class: programs-list
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: false
+          content:
+            value: "<div class = \"program-header\">\r\n<h1>Programs</h1>\r\n<p>Classes, open studios, exhibitions and workshops -- something for every age and skill level.</p>\r\n</div>"
+            format: full_html
+          tokenize: false
       display_extenders: {  }
       path: programs
     cache_metadata:
@@ -395,6 +521,7 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
+        - url
         - url.query_args
         - 'user.node_grants:view'
         - user.permissions

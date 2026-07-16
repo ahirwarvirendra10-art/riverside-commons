@@ -1,0 +1,38 @@
+<article class="program-card">
+
+	<a href="{{ url }}" class="program-card__image">
+		{{ content.field_hero_image }}
+	</a>
+
+	<div class="program-card__content">
+
+		{% if category %}
+			<div class="program-card__category">
+				{{ category }}
+			</div>
+		{% endif %}
+
+		<h3 class="program-card__title">
+			<a href="{{ url }}">
+				{{ title }}
+			</a>
+		</h3>
+
+		{% if description %}
+
+			<div class="program-card__description">
+				{{ description }}
+			</div>
+
+		{% endif %}
+
+		{% if meta %}
+			<div class="program-card__meta">
+				{{ meta }}
+			</div>
+
+		{% endif %}
+
+	</div>
+
+</article>

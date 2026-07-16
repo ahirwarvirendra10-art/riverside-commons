@@ -10,8 +10,8 @@ _core:
   default_config_hash: VhBzWb7lMRtIOg9G7VSw_0uopi-7zXeHq4vXqqV1HFE
 id: riverside_breadcrumbs
 theme: riverside
-region: header
-weight: 0
+region: breadcrumb
+weight: -10
 provider: null
 plugin: system_breadcrumb_block
 settings:
